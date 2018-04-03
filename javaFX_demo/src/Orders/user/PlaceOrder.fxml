@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Orders.user.PlaceOrderController">
+   <bottom>
+      <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <buttons>
+            <Button fx:id="close_btn" mnemonicParsing="false" onAction="#closeWindow" text="Close" translateX="-30.0" />
+          <Button fx:id="pay_btn" mnemonicParsing="false" onAction="#payWindow" text="Pay" translateX="-30.0" />
+        </buttons>
+      </ButtonBar>
+   </bottom>
+   <center>
+      <ListView fx:id="currentOrder" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

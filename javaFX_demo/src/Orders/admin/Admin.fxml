@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#updateTable" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Orders.admin.AdminController">
+   <top>
+      <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+          <Button fx:id="logout" mnemonicParsing="false" onAction="#logout" text="Logout" />
+        </items>
+      </ToolBar>
+   </top>
+   <center>
+      <TabPane fx:id="adminTabPane" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Orders">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="ordersTable" layoutX="39.0" layoutY="55.0" prefHeight="531.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="oID" maxWidth="67.0" minWidth="-1.0" prefWidth="67.0" text="Sr. No." />
+                            <TableColumn fx:id="oName" prefWidth="186.0" text="Item" />
+                              <TableColumn fx:id="oQty" minWidth="0.0" prefWidth="61.0" text="Qty" />
+                              <TableColumn fx:id="oCartPrice" prefWidth="97.0" text="Total Price" />
+                              <TableColumn fx:id="oUser" prefWidth="185.0" text="User Details" />
+                              <TableColumn prefWidth="400.0" text="Action">
+                                 <columns>
+                                    <TableColumn fx:id="oCNF" prefWidth="100.0" text="Confirm" />
+                                    <TableColumn fx:id="oDEL" prefWidth="100.0" text="Delete" />
+                                    <TableColumn fx:id="oDLV" prefWidth="100.0" text="Delivered" />
+                                 </columns></TableColumn>
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Users">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="userTable" layoutX="84.0" onMouseEntered="#updateTable" prefHeight="491.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="uid" prefWidth="75.0" text="ID" />
+                            <TableColumn fx:id="uName" prefWidth="191.0" text="Name" />
+                              <TableColumn fx:id="uCreditPoints" prefWidth="173.0" text="Credit Points" />
+                              <TableColumn fx:id="uTotalSpent" minWidth="1.0" prefWidth="215.0" text="Total Spent" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>
